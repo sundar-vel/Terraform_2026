@@ -3,14 +3,12 @@ variable "security_group_name" {
     description = "Name of the security group"
     type = string
 }
-
 #creating variable for pass port numbers
 variable "Ports" {
   description = "List of port numbers to opend in the ingress"
   type = list(number)
   default = [22, 443, 80 ]
 }
-
 #creating ingress cidr level
 variable "CIDR-ingress" {
     description = "ingress allowed level"
