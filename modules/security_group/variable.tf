@@ -3,11 +3,21 @@ variable "security_group_name" {
     description = "Name of the security group"
     type = string
 }
+
+# Creating env names
+variable "env" {
+    description = "Assign environment to the Sg"
+    type = list(string)
+}
 #creating variable for pass port numbers
 variable "Ports" {
   description = "List of port numbers to opend in the ingress"
-  type = list(number)
-  default = [22, 443, 80 ]
+  type = map(number)
+  default = {
+    ssh = 22
+    http = 80
+    https = 443
+  }
 }
 #creating ingress cidr level
 variable "CIDR-ingress" {
