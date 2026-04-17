@@ -1,12 +1,12 @@
 #Creating security group
 resource "aws_security_group" "Security-group" {
   for_each = toset(var.env)
-  name        = "allow_tls"
+  name        = var.security_group_name
   description = "Allow TLS inbound traffic and all outbound traffic"
   
 
   tags = {
-    Name = each.key
+    Name = each.value
   }
 }
 

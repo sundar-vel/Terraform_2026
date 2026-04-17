@@ -1,0 +1,10 @@
+security_group_name = "SG-demo"
+env = ["rect"]
+Ports = {
+    tcp = 22
+    tcp = 80
+    tcp = 443
+}
+
+CIDR-ingress = "0.0.0.0/0"
+CIDR-egress = "0.0.0.0/0"
